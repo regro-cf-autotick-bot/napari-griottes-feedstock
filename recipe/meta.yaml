@@ -1,5 +1,5 @@
 {% set name = "napari-griottes" %}
-{% set version = "0.3.9" %}
+{% set version = "0.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari_griottes-{{ version }}.tar.gz
-  sha256: 7b359f932429d126efda3b0c3a5f34b096bf94c5359c43cfa33cdc0ad0e79d63
+  sha256: 7fefccb63fd1f2247e220ad60bd0e83ff14a54af51f09111bbb9844dbdd2ec2f
 
 build:
   noarch: python
