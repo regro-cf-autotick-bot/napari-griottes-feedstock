@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari_griottes-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari_griottes-{{ version }}.tar.gz
   sha256: 7fefccb63fd1f2247e220ad60bd0e83ff14a54af51f09111bbb9844dbdd2ec2f
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools-scm
   run:
     - griottes
@@ -25,7 +25,7 @@ requirements:
     - networkx
     - numpy
     - pandas <2.0.0a0
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/aaristov/napari-griottes
